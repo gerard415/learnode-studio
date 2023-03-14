@@ -13,7 +13,7 @@ export default function View(props) {
       </div>
       <div className=' overflow-y-scroll scrollbar h-full text-gray-600 ' >
         <div className=' border-opacity-20 h-max overflow-y-scroll scrollbar scrollbar-thumb-rounded overflow-hidden flex flex-col gap-3'>
-          <NavLink to='/' className="grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer">
+          <NavLink to='/' exact className={({ isActive }) => (isActive ? 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all bg-gray-100 duration-300 hover:cursor-pointer' : 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer hover:bg-gray-100')}>
             <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-columns-gap" viewBox="0 0 16 16" className="w-5 col-span-2 " > 
               <path d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/> 
             </svg>
@@ -21,7 +21,7 @@ export default function View(props) {
               <p className='font-semibold text-sm' >Dashboard</p>
             </div>
           </NavLink>
-          <NavLink to='/subscriptions' className="grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer">
+          <NavLink to='/content' className={({ isActive }) => (isActive ? 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all bg-gray-100 duration-300 hover:cursor-pointer' : 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer hover:bg-gray-100')}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-collection-play" viewBox="0 0 16 16" className="w-5 col-span-2 " > 
               <path d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1zm2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848l-4-2.5z"/> <path d="M1.5 14.5A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5h-13zm13-1a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-.5-.5h-13A.5.5 0 0 0 1 6v7a.5.5 0 0 0 .5.5h13z"/> 
             </svg>
@@ -29,7 +29,7 @@ export default function View(props) {
               <p className='font-semibold text-sm' >Content</p>
             </div>
           </NavLink>
-          <NavLink to='/Categories' className="grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer">
+          <NavLink to='/analytics' className={({ isActive }) => (isActive ? 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all bg-gray-100 duration-300 hover:cursor-pointer' : 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer hover:bg-gray-100')}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16" className="w-5 col-span-2" > 
               <path d="M4 11a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1zm6-4a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V7zM7 9a1 1 0 0 1 2 0v3a1 1 0 1 1-2 0V9z"/> <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/> <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/> 
             </svg>
@@ -37,7 +37,7 @@ export default function View(props) {
               <p className='font-semibold text-sm' >Analytics</p>
             </div>
           </NavLink>
-          <NavLink to='/livestream' className="grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer">
+          <NavLink to='/comments' className={({ isActive }) => (isActive ? 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all bg-gray-100 duration-300 hover:cursor-pointer' : 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer hover:bg-gray-100')}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat-right-text" viewBox="0 0 16 16" className="w-5 col-span-2" > 
               <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/> 
               <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
@@ -46,7 +46,7 @@ export default function View(props) {
               <p className='font-semibold text-sm' >Comments</p>
             </div>
           </NavLink>
-          <NavLink to='/livestream' className="grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer">
+          <NavLink to='/subtitles' className={({ isActive }) => (isActive ? 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all bg-gray-100 duration-300 hover:cursor-pointer' : 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer hover:bg-gray-100')}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-filter-square" viewBox="0 0 16 16" className="w-5 col-span-2"> 
               <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/> 
               <path d="M6 11.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/> 
@@ -55,13 +55,13 @@ export default function View(props) {
               <p className='font-semibold text-sm' >Subtitles</p>
             </div>
           </NavLink>
-          <NavLink to='/livestream' className="grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer">
+          <NavLink to='/copyright' className={({ isActive }) => (isActive ? 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all bg-gray-100 duration-300 hover:cursor-pointer' : 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer hover:bg-gray-100')}>
             <img src={copyright} alt="" className="w-6 col-span-2"/>
             <div className='h-full flex items-center justify-between col-span-10'>
               <p className='font-semibold text-sm' >Copyright</p>
             </div>
           </NavLink>
-          <NavLink to='/livestream' className="grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer">
+          <NavLink to='/earn' className={({ isActive }) => (isActive ? 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all bg-gray-100 duration-300 hover:cursor-pointer' : 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer hover:bg-gray-100')}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-coin" viewBox="0 0 16 16" className="w-5 col-span-2"> 
               <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9H5.5zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518l.087.02z"/> 
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/> 
@@ -71,7 +71,7 @@ export default function View(props) {
               <p className='font-semibold text-sm' >Earn</p>
             </div>
           </NavLink>
-          <NavLink to='/livestream' className="grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer">
+          <NavLink to='/cutomizations' className={({ isActive }) => (isActive ? 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all bg-gray-100 duration-300 hover:cursor-pointer' : 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer hover:bg-gray-100')}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-magic" viewBox="0 0 16 16" className="w-5 col-span-2"> 
               <path d="M9.5 2.672a.5.5 0 1 0 1 0V.843a.5.5 0 0 0-1 0v1.829Zm4.5.035A.5.5 0 0 0 13.293 2L12 3.293a.5.5 0 1 0 .707.707L14 2.707ZM7.293 4A.5.5 0 1 0 8 3.293L6.707 2A.5.5 0 0 0 6 2.707L7.293 4Zm-.621 2.5a.5.5 0 1 0 0-1H4.843a.5.5 0 1 0 0 1h1.829Zm8.485 0a.5.5 0 1 0 0-1h-1.829a.5.5 0 0 0 0 1h1.829ZM13.293 10A.5.5 0 1 0 14 9.293L12.707 8a.5.5 0 1 0-.707.707L13.293 10ZM9.5 11.157a.5.5 0 0 0 1 0V9.328a.5.5 0 0 0-1 0v1.829Zm1.854-5.097a.5.5 0 0 0 0-.706l-.708-.708a.5.5 0 0 0-.707 0L8.646 5.94a.5.5 0 0 0 0 .707l.708.708a.5.5 0 0 0 .707 0l1.293-1.293Zm-3 3a.5.5 0 0 0 0-.706l-.708-.708a.5.5 0 0 0-.707 0L.646 13.94a.5.5 0 0 0 0 .707l.708.708a.5.5 0 0 0 .707 0L8.354 9.06Z"/> 
             </svg>
@@ -80,7 +80,7 @@ export default function View(props) {
               <p className='font-semibold text-sm' >Customizations</p>
             </div>
           </NavLink>
-          <NavLink to='/livestream' className="grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer">
+          <NavLink to='/audio' className={({ isActive }) => (isActive ? 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all bg-gray-100 duration-300 hover:cursor-pointer' : 'grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer hover:bg-gray-100')}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-music-note-list" viewBox="0 0 16 16" className="w-5 col-span-2"> 
               <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2z"/> 
               <path fill-rule="evenodd" d="M12 3v10h-1V3h1z"/> <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1V2.82z"/> 
@@ -94,7 +94,7 @@ export default function View(props) {
       </div>
       <hr />
       <div className='h-[160px] text-gray-600' >
-          <div className='grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer '>
+          <div className='grid hover:bg-gray-200 rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer '>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 col-span-2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -105,7 +105,7 @@ export default function View(props) {
             </div>
           </div>
 
-          <div className='grid rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer '>
+          <div className='grid hover:bg-gray-200 rounded-lg gap-x-5 items-center menu-item grid-cols-12 py-2 w-full px-3 transition-all duration-300 hover:cursor-pointer '>
             <img src={feedback} alt="" className="w-5 col-span-2"/>
             <div className='h-full flex items-center justify-between col-span-10'>
               <p className='font-semibold text-sm' >Send Feedback</p>
