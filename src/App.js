@@ -11,7 +11,7 @@ const App = () => {
 
           <div className='flex bg-theme-darker w-full ' >
             <Sidebar/>
-            <div className='w-full ml-[260px] bg-gray-100 '>
+            <div className='w-full ml-[230px] bg-theme-gray '>
                 <Routes>
                   <Route path='/' element={<Homepage/>} />
                 </Routes>
