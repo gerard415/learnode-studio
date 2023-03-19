@@ -1,64 +1,79 @@
 import React from 'react'
+import { InboxOutlined } from '@ant-design/icons';
+import { message, Upload } from 'antd';
+const { Dragger } = Upload;
 
 export const DragAndDrop = () => {
   
-    // drag state
-    const [dragActive, setDragActive] = React.useState(false);
-
-    const [file, setFile] = React.useState([])
-    // ref
-    const inputRef = React.useRef(null);
-    
-    // handle drag events
-    const handleDrag = function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (e.type === "dragenter" || e.type === "dragover") {
-        setDragActive(true);
-        } else if (e.type === "dragleave") {
-        setDragActive(false);
-        }
-    };
-    
-    // triggers when file is dropped
-    const handleDrop = function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        setDragActive(false);
-        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-        setFile(e.dataTransfer.files);
-        }
-    };
-    
-    // triggers when file is selected with click
-    const handleChange = function(e) {
-        e.preventDefault();
-        if (e.target.files && e.target.files[0]) {
-        setFile(e.target.files);
-        }
-    };
-    
-    // triggers the input when the button is clicked
-    const onButtonClick = () => {
-        inputRef.current.click();
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(file)
+const props = {
+  name: 'file',
+  multiple: false,
+  action: 'https://localhost:3000/',
+  onChange(info) {
+    const { status } = info.file;
+    if (status !== 'uploading') {
+      console.log(info.file, info.fileList);
     }
+    if (status === 'done') {
+      message.success(`${info.file.name} file uploaded successfully.`);
+    } else if (status === 'error') {
+      message.error(`${info.file.name} file upload failed.`);
+    }
+  },
+  onDrop(e) {
+    console.log('Dropped files', e.dataTransfer.files);
+  },
+};
   return (
-            <form id="form-file-upload" className='text-black' onDragEnter={handleDrag} onSubmit={(e) => handleSubmit(e)}>
-                <input ref={inputRef} type="file" id="input-file-upload" multiple={true} onChange={handleChange} />
-                <label id="label-file-upload" htmlFor="input-file-upload" className={dragActive ? "drag-active" : "" }>
-                    <div>
-                    <p>Drag and drop your file here or</p>
-                    <button type='button' className="upload-button" onClick={onButtonClick}>Upload a file</button>
-                    </div> 
-                </label>
-                { dragActive && <div id="drag-file-element" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop}></div> }
-            </form>
+    <div className='h-[280px]'>
+        <Dragger  {...props}>
+            <p className="ant-upload-drag-icon">
+            <InboxOutlined />
+            </p>
+            <p className="ant-upload-text">Click or drag file to this area to upload</p>
+            <p className="ant-upload-hint">
+            Support for a single or bulk upload. Strictly prohibited from uploading company data or other
+            banned files.
+            </p>
+        </Dragger>
+    </div>
+
   )
 }
 
 
+// import { InboxOutlined } from '@ant-design/icons';
+// import { message, Upload } from 'antd';
+// const { Dragger } = Upload;
+// const props = {
+//   name: 'file',
+//   multiple: true,
+//   action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+//   onChange(info) {
+//     const { status } = info.file;
+//     if (status !== 'uploading') {
+//       console.log(info.file, info.fileList);
+//     }
+//     if (status === 'done') {
+//       message.success(`${info.file.name} file uploaded successfully.`);
+//     } else if (status === 'error') {
+//       message.error(`${info.file.name} file upload failed.`);
+//     }
+//   },
+//   onDrop(e) {
+//     console.log('Dropped files', e.dataTransfer.files);
+//   },
+// };
+// const App = () => (
+//   <Dragger {...props}>
+//     <p className="ant-upload-drag-icon">
+//       <InboxOutlined />
+//     </p>
+//     <p className="ant-upload-text">Click or drag file to this area to upload</p>
+//     <p className="ant-upload-hint">
+//       Support for a single or bulk upload. Strictly prohibited from uploading company data or other
+//       banned files.
+//     </p>
+//   </Dragger>
+// );
+// export default App;
