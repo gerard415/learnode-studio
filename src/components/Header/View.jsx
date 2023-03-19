@@ -25,7 +25,7 @@ export default function View(props) {
     useEffect(() => {
         let theme = document.querySelector('body').classList[0]
         // console.log(theme)
-        if(theme == "theme-light"){
+        if(theme === "theme-light"){
             settheme("light")
         }else{
             settheme("dark")
@@ -38,7 +38,7 @@ export default function View(props) {
         let theme = document.querySelector('body').classList[0]
 
         console.log(theme)
-        if(theme == "theme-light"){
+        if(theme === "theme-light"){
             settheme("light")
             document.querySelector('body').classList.remove(theme)
             document.querySelector('body').classList.add("theme-dark")
@@ -95,10 +95,10 @@ export default function View(props) {
     ];
 
     return(
-        <div className='sticky top-0 w-full pr-8 grid grid-cols-12 shadow-md  bg-theme-light items-center h-[50px] z-50 ' >
+        <div className='sticky top-0 w-full pr-8 grid grid-cols-12 shadow-md font-nunito bg-theme-light items-center h-[50px] z-50 ' >
 
         <Modal
-            className="lgsn"
+            className="lgsn "
             width={1000}
             title={
                 <div className="w-full text-3xl px-4 modal-content-header flex justify-between text-black  items-start">
@@ -127,6 +127,7 @@ export default function View(props) {
                     </div>
                 </div>
             }
+            destroyOnClose
             closeIcon={<div></div>}
             // bodyStyle={{backgroundColor: "#14141", background: "#14141"}}
             centered

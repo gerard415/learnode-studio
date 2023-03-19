@@ -7,7 +7,8 @@ module.exports = {
     extend: {},
     fontFamily:{
       roboto: ['Roboto', 'sans-serif'],
-      roboto2: ['Roboto Condensed', 'sans-serif']
+      roboto2: ['Roboto Condensed', 'sans-serif'], 
+      nunito: ['Nunito Sans', 'sans-serif']
     }
   },
   plugins: [
